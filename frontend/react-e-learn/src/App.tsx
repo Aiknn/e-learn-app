@@ -3,8 +3,9 @@ import './App.css';
 import { Navbar } from './layouts/NavbarAndFooter/Navbar';
 import { HomePage } from './layouts/HomePage/HomePage';
 import { Footer } from './layouts/NavbarAndFooter/Footer';
-import { SearchCoursePage } from './layouts/SearchCoursePage/SearchCoursePage';
+import { SearchCoursesPage } from './layouts/SearchCoursePage/SearchCoursesPage';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import { CoursePage } from './layouts/CoursePage/CoursePage';
 
 export const App = () => {
   return (
@@ -19,11 +20,11 @@ export const App = () => {
             <HomePage/>
           </Route>
           <Route path='/search'>
-            <SearchCoursePage/>
+            <SearchCoursesPage/>
           </Route>
-          {/* <Route path='/checkout/:bookId'> */}
-            {/* <BookCheckoutPage/> */}
-          {/* </Route> */}
+          <Route path='/checkout/:courseId'>
+            <CoursePage/>
+          </Route>
         </Switch>
       </div>
       <Footer/>
